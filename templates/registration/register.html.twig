@@ -1,0 +1,59 @@
+{% extends 'base2.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+    <div class="c-contentForm">
+        <h2 class="text-primary text-uppercase mt-5">Registrate</h2>
+        {{ form_start(registrationForm,{'attr' : {'class': 'centraFormulario'}}) }}
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <div class="form-floating">
+                        {{ form_row(registrationForm.nombre,{'attr' : {'class': 'form-control', 'placeholder':'Nombre'},label:'Nombre'}) }}
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="form-floating col">
+                            {{ form_row(registrationForm.apellido1,{'attr' : {'class': 'form-control','placeholder':'Apellido 1'},label:"Apellido 1"}) }}
+                        </div>
+                    
+                        <div class="form-floating col">
+                            {{ form_row(registrationForm.apellido2,{'attr' : {'class': 'form-control','placeholder':'Apellido 2'},label:'Apellido 2'}) }}
+                        </div>
+                    </div>    
+                    <br>
+                    <div class="form-floating">
+                        {{ form_row(registrationForm.email,{'attr' : {'class': 'form-control','placeholder':'Email'},label:'Email'}) }}
+                    </div>
+                    <br>
+                    
+                    {# {% if error %}
+                        <label class="text-danger">{{error}}</label>
+                    {% endif %}
+                     #}
+                    <div class="form-floating">
+                        {{ form_row(registrationForm.plainPassword,{'attr' : {'class': 'form-control','placeholder':'Contraseña'},label:'Contraseña'}) }} 
+                    </div>
+                    <br>
+                    <div>
+                        <label for="password">Repita la contraseña</label>
+                        <input type="password" class="form-control" id="password" name="_password" placeholder="Contraseña">
+                        
+                    </div>
+                    <br>
+                    <div class="form-floating">
+                        {{ form_row(registrationForm.id_telegram,{'attr' : {'class': 'form-control','placeholder':'Numero de telegram'},label:'Numero de telegram'}) }} 
+                    </div>
+                    <br>
+                    <button class="btn btn-primary w-100 py-3" type="submit">Registrarse</button>
+                </div>
+            </div>
+        {{ form_end(registrationForm) }} 
+    </div>
+
+    {# {{ form_start(registrationForm) }}
+            {# {{ form_row(registrationForm.plainPassword,{'attr' : {'class': 'form-control'}},{label:'Contraseña'}) }}    
+            {{ form_row(registrationForm.id_telegram) }} 
+    {{ form_end(registrationForm) }} #}
+
+{% endblock %}

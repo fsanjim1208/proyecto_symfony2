@@ -1,0 +1,43 @@
+
+{% extends "base2.html.twig" %}
+
+
+
+    {% block body %}
+    
+    <div id="juego" class=" mt-4">
+
+        <h3 class="text-primary mb-4 ms-5">Listado de juegos</h3>
+        <table class=" table table-hover table-bordered table-condensed miTabla">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Editorial</th>
+                    <th>Jugadores min</th>
+                    <th>Jugadores max</th>
+                    <th>Imagen</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for juego in juegos %}
+                    <tr>
+                        <td>{{ juego.nombre }}</td>
+                        <td>{{ juego.editorial }}</td>
+                        <td>{{ juego.getJugadoresMin() }}</td> 
+                        <td>{{ juego.getJugadoresMax() }}</td> 
+                        {% if juego.img %}
+                            <td><img src="{{juego.img}}" class="c-imagen c-imagen--juegos" ></img></td>
+                        {% else %}
+                            <td>Sin imagen</td>
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="navigation">
+        {{ knp_pagination_render(juegos) }}
+    </div>
+
+    {% endblock %}
