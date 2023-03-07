@@ -5,6 +5,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Mesa;
+use App\Entity\Evento;
 use App\Entity\Juego;
 use App\Entity\Tramo;
 use App\Repository\JuegoRepository;
@@ -48,13 +49,35 @@ use Knp\Component\Pager\PaginatorInterface;
             ->getRepository(Juego::class)
             ->findOneById(2);
 
+            $entityManager= $doctrine->getManager();
+            $evento1 = $this->doctrine
+            ->getRepository(Evento::class)
+            ->findOneById(1);
 
+            $entityManager= $doctrine->getManager();
+            $evento2 = $this->doctrine
+            ->getRepository(Evento::class)
+            ->findOneById(5);
+
+            $entityManager= $doctrine->getManager();
+            $evento3 = $this->doctrine
+            ->getRepository(Evento::class)
+            ->findOneById(6);
+
+            $entityManager= $doctrine->getManager();
+            $evento4 = $this->doctrine
+            ->getRepository(Evento::class)
+            ->findOneById(7);
 
             return $this->render('main/home.html.twig',[
                 'juego1' => $juego1,
                 'juego2' => $juego2,
                 'juego3' => $juego3,
                 'juego4' => $juego4,
+                'evento1' => $evento1,
+                'evento2' => $evento2,
+                'evento3' => $evento3,
+                'evento4' => $evento4,
             ]);
         }
 

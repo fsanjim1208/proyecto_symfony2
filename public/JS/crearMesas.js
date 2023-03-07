@@ -13,12 +13,12 @@ $(function(){
                     <div class="col-md-10">
                         <div class="form-floating">
                             <input type="number" class="form-control" id="altura" name="altura" placeholder="Alto">
-                            <label for="altura">altura</label>
+                            <label for="altura">altura(cm)</label>
                         </div>
                         <br>
                         <div class="form-floating">
                             <input type="number" class="form-control" id="anchura" name="anchura" placeholder="Ancho">
-                            <label for="anchura">Ancho</label>
+                            <label for="anchura">Ancho(cm)</label>
                         </div>
                     </div>
                 </div>

@@ -1,10 +1,10 @@
 
 {% extends "base2.html.twig" %}
-    {% block javascripts %}
-
-
-    {% endblock %}
+{% block stylesheets %}
+    <link href="{{ asset('CSS/responsiveEditaJuego.css') }}" rel="stylesheet">
+{% endblock %}
     {% block body %}
+    <div class="c-contentForm">
     <form action="/invitaUsu/{{evento.id}}" method="post">
     <div id="juego" class=" mt-4">
 
@@ -14,9 +14,9 @@
                 <tr>
                     <th>Nombre</th>
                     <th>Primer apellido</th>
-                    <th>Segundo Apellido</th>
+                    <th class="ocultar-col2">Segundo Apellido</th>
                     <th>Email</th>
-                    <th>Numero telegram</th>
+                    <th class="ocultar-col">Numero telegram</th>
                     <th>Acción</th>
                 </tr>
             </thead>
@@ -25,9 +25,9 @@
                     <tr>
                         <td>{{ u.nombre }} </td>
                         <td>{{ u.apellido1 }}</td>
-                        <td>{{ u.apellido2 }}</td> 
+                        <td class="ocultar-col2">{{ u.apellido2 }}</td> 
                         <td>{{ u.email }}</td> 
-                        <td>{{ u.getIdTelegram() }}</td>
+                        <td class="ocultar-col">{{ u.getIdTelegram() }}</td>
                         {# <td>
                             
                             {% for p in participaciones %}
@@ -64,6 +64,19 @@
 
     {# <button type="submit">EEE</button> #}
     
-            {{ form_start(form,{'attr' : {'class': 'centraFormulario'}}) }}
+        {{ form_start(form,{'attr' : {'class': 'centraFormulario'}}) }}
+            <div class="row g-3 form-invita">
+                <div class="col-md-6">
+                    <div class="row mt-3">
+                        <div class="form-floating mb-4 col">
+                            <a href="{{path('app_mantenimiento_evento')}}"><input class="btn btn-secondary w-100 py-3" value="Salir"></input></a>
+                        </div>
+                        <div class="form-floating mb-4 col">
+                            {{ form_row(form.save,{'attr' : {'class': 'btn btn-primary w-100 py-3'},label:"Guardar"})}}
+                        </div>
+                    </div>
+                </div>
+            </div>
         {{ form_end(form) }}
+    </div>
     {% endblock %}

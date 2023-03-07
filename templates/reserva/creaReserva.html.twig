@@ -10,6 +10,7 @@
         <script src="{{ asset('JS/mesa.js') }}" type="text/javascript"></script>
         <script src="{{ asset('JS/funcionesReserva.js') }}" type="text/javascript"></script>
         <script src="{{ asset('JS/reserva2.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('JS/muestraVideo.js') }}" type="text/javascript"></script>
     {% endblock %}
     {% block body %}
     <div class="contenedor">
@@ -17,6 +18,7 @@
 
         <div class="c-contentForm formreserva">
             <h2 class="text-primary text-uppercase mt-2">Reservar</h2>
+            <a href="#" class="ayuda">¿Necesitas ayuda?</a>
             <form class="ms-5" action="{{ path('app_listado_reservas') }}" id="form_reserva">
                 <div class="row g-6">
                     <div class="col-md-13">

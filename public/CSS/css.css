@@ -13,6 +13,7 @@
     margin-top: 2%;
     margin-left: 2%;
     width: 900px; 
+    min-width: 900px;
     height: 600px;
     border: 1px solid red;
 }
@@ -69,10 +70,6 @@
     padding: 5px;
 }
 
-
-
-
-
 .ui-dialog
 {
 background: #e5e5e5;
@@ -91,15 +88,18 @@ background: #e5e5e5;
 }
 
 .ms-btn__newEvento{
-    margin-left: 74em;
+    margin-left: 70%;
 }
 .ms-btn__newJuego{
-    margin-left: 1040px;
+    margin-left: 70%;
 }
 
 .c-imagen--eventos{
     width: 150px;
     height: 100px;
+}
+.form-invita{
+    margin-left: 33%;
 }
 
 .miTabla{

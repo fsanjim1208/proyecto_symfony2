@@ -1,6 +1,8 @@
 
 {% extends 'base2.html.twig' %}
-
+    {% block javascripts %}
+        <script src="{{ asset('JS/validaLogin.js') }}" type="text/javascript"></script>
+    {% endblock %}
 
 {% block body %}
     <div class="c-contentForm">
@@ -13,11 +15,13 @@
                         <input type="email" class="form-control" id="username" name="_username" placeholder="Email" value="{{last_username}}">
                         <label for="username">Email</label>
                     </div>
+                    <label class="errorEmail text-danger"></label>
                     <br>
                     <div class="form-floating">
                         <input type="password" class="form-control" id="password" name="_password" placeholder="Contraseña">
                         <label for="password">Contraseña</label>
                     </div>
+                    <label class="errorPassword text-danger"></label>
                     <br>
                     <a href="{{path('app_forgot_password_request')}}">¿Ha olvidado su contraseña?</a>
                     <br><br>

@@ -68,6 +68,7 @@ class RegistrationFormType extends AbstractType
                 ])
             
             ->add('email',EmailType::class,[
+                'attr' => ['class'=>'text-danger'],
                 'label' => false,
                 'constraints' => [
                     new NotBlank([
@@ -79,7 +80,6 @@ class RegistrationFormType extends AbstractType
                 // instead of being set onto the object directly,
                 // this is read and encoded in the controller
                 'mapped' => false,
-                'attr' => ['autocomplete' => 'new-password'],
                 'constraints' => [
                     new Length([
                         'min' => 5,

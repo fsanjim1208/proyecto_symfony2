@@ -11,17 +11,17 @@
         {% for flashMessage in app.session.flashbag.get('error') %}
             <div class="alert alert-danger">{{ flashMessage }}</div>
         {% endfor %}
-<a href="{{path("app_crea_juego")}}"><button type="button" class="btn btn-primary mb-3 ms-btn__newJuego" id=""><i class="fa fa-plus"></i> Nuevo Juego</button> </a>
+            <a href="{{path("app_crea_juego")}}"><button type="button" class="btn btn-primary mb-3 ms-btn__newJuego" id=""><i class="fa fa-plus"></i> Nuevo Juego</button> </a>
 
-        <table class=" table table-hover table-bordered table-condensed miTabla w-75">
+        <table class=" table table-responsive table-hover table-bordered table-condensed miTabla w-75">
             <thead class="thead-dark">
                 <tr>
                     <th>Nombre</th>
                     <th>Editorial</th>
-                    <th>Ancho</th>
-                    <th>Alto</th>
-                    <th>Jugadores min</th>
-                    <th>Jugadores max</th>
+                    <th class="d-none d-md-table-cell">Ancho</th>
+                    <th class="d-none d-md-table-cell">Alto</th>
+                    <th class="d-none d-md-table-cell">Jugadores min</th>
+                    <th class="d-none d-md-table-cell">Jugadores max</th>
                     <th>Imagen</th>
                     <th>Acción</th>
                 </tr>
@@ -31,10 +31,10 @@
                     <tr>
                         <td>{{ juego.nombre }}</td>
                         <td>{{ juego.editorial }}</td>
-                        <td>{{ juego.Ancho }}</td>
-                        <td>{{ juego.Alto }}</td>
-                        <td>{{ juego.getJugadoresMin() }}</td>
-                        <td>{{ juego.getJugadoresMax() }}</td>
+                        <td class="d-none d-md-table-cell">{{ juego.Ancho }}</td>
+                        <td class="d-none d-md-table-cell">{{ juego.Alto }}</td>
+                        <td class="d-none d-md-table-cell">{{ juego.getJugadoresMin() }}</td>
+                        <td class="d-none d-md-table-cell">{{ juego.getJugadoresMax() }}</td>
 
                         {% if juego.img %}
                             <td><img src="{{juego.img}}" class="c-imagen c-imagen--juegos" ></img></td>

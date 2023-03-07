@@ -168,7 +168,7 @@ class EventoController extends AbstractController
     }
 
     #[Route('/invitaUsu/{idEvento}', name: 'app_invitaUsu_evento')]
-    public function invitaUsu(int $idEvento, Request $request,ManagerRegistry $doctrine,PaginatorInterface $paginator,MailerInterface $mailer,Api $telegram, EmailSender $emailSender): Response
+    public function invitaUsu(int $idEvento, Request $request,ManagerRegistry $doctrine,PaginatorInterface $paginator,MailerInterface $mailer,Api $telegram): Response
     {
 
         $entityManager= $doctrine->getManager();

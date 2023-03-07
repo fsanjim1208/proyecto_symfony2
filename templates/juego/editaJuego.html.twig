@@ -1,4 +1,8 @@
 {% extends 'base2.html.twig' %}
+            
+{% block stylesheets %}
+    <link href="{{ asset('CSS/responsiveEditaJuego.css') }}" rel="stylesheet">
+{% endblock %}
 
 {% block body %}
     <div class="c-contentForm">
@@ -43,8 +47,11 @@
                             <label class="form-check-label" for="No">No</label>
                         </div><br>
                         <small>Esto dejara al juego sin imagen</small><br>
-                        <img src="../{{juego.img}}" class="c-imagen c-imagen--juegos"></img>
-
+                        {% if juego.img %}
+                            <img src="../{{juego.img}}" class="c-imagen c-imagen--juegos"></img>
+                        {% else %}
+                            <p>No tiene imagen</p>
+                        {% endif %}
                         {{ form_row(form.img,{'attr' : {'class': 'form-control','placeholder':'Contraseña'}}) }}
                     </div>
                     <div class="row">
